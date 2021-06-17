@@ -1,0 +1,19 @@
+.left-readed-content {
+    background: rgb(35, 23, 104);
+    min-height: 81vh;
+    display: inline-block;
+    width: 300px;
+}
+
+.right-readed-content {
+    
+    
+    display: inline-block;
+   
+}
+
+.readed-content {
+    background: #fff;
+    min-height: 81vh;
+   
+}
