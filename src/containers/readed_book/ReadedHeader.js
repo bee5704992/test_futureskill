@@ -13,7 +13,7 @@ const ReadedHeader = () => {
 
     let sort_by_select = (
         <>
-            <Select defaultValue="book_name" style={{ width: 120 }} onChange={handleChangeSearch}>
+            <Select defaultValue="book_name" style={{ width: 120,marginLeft:'10px' }} onChange={handleChangeSearch}>
                 <Option value="book_name">ชื่อหนังสือ</Option>
                 <Option value="rating">ความนิยม</Option>
             </Select>
@@ -24,10 +24,10 @@ const ReadedHeader = () => {
         <div className="readed-header">
             <Row justify="end">
                 <div style={{marginRight:'30px'}} >
-                    <Search placeholder="input search text" allowClear onSearch={onSearch} style={{ width: '30vw' }} />
+                    <Search placeholder="หนังสือที่ต้องการค้นหา" allowClear onSearch={onSearch} style={{ width: '30vw' }} />
                 </div>
 
-                <div style={{marginRight:'30px'}}>
+                <div style={{marginRight:'30px',color:'white'}}>
                     sort by
                     {sort_by_select}
                 </div>

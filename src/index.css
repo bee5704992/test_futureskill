@@ -16,3 +16,11 @@ body {
 button:disabled {
   opacity: 0.5;
 }
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected {
+  background: #4f02b1 !important;
+}
+
+.ant-layout {
+  background: white;
+}

@@ -2,6 +2,7 @@ import React from 'react'
 import { Layout, Row } from 'antd';
 import './readed_book.css';
 import ReadedHeader from './ReadedHeader';
+import AllReadedBook from './AllReadedBook';
 
 const { Content } = Layout;
 
@@ -15,12 +16,10 @@ function Readed_Book() {
 
                 <div className="readed-content">
 
-                    <div className="left-readed-content">
-
-                    </div>
-                    <div className="right-readed-content">
+            
+                    
                     <h1 className="header">Readed Book</h1>
-                    </div>
+                    <AllReadedBook />
                 </div>
 
             </Content>

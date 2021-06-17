@@ -1,19 +1,10 @@
-.left-readed-content {
-    background: rgb(35, 23, 104);
-    min-height: 81vh;
-    display: inline-block;
-    width: 300px;
-}
-
-.right-readed-content {
-    
-    
-    display: inline-block;
-   
+.readed-header {
+    background: linear-gradient(to  right , rgb(254, 0, 138), rgb(6, 0, 210)) !important;
+    padding: 10px;
 }
 
 .readed-content {
     background: #fff;
-    min-height: 81vh;
+    
    
 }

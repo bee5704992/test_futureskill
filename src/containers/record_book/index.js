@@ -12,15 +12,15 @@ const Record_Book = () => {
 
     const layout = {
         labelCol: {
-          span: 24,
+            span: 24,
         },
         wrapperCol: {
-          span: 24,
+            span: 24,
         },
     };
 
     let FormContents = (
-        <div style={{display:'inline-block',width:'100%'}} >
+        <div style={{ display: 'inline-block', width: '100%' }} >
             <Form {...layout} onFinish={onFinish}>
                 <Form.Item
                     label="ชื่อหนังสือ"
@@ -53,20 +53,20 @@ const Record_Book = () => {
                 >
                     <Input />
                 </Form.Item>
-                
+
                 <Form.Item
-                    label="วันเวลาที่อ่านจบ"
+                    label="วันเวลาที่อ่าน"
                     name="read_date"
                     rules={[{ required: true, message: 'โปรดใส่วันเวลาที่อ่านจบ' }]}
                 >
                     <Input />
                 </Form.Item>
 
-                <Form.Item style={{marginBottom:'0'}} >
+                <Form.Item style={{ marginBottom: '0' }} >
                     <Row justify='center'>
-                    <Button type="primary" htmlType="submit" style={{width:'100%'}}>
-                        Submit
-                    </Button>
+                        <Button type="primary" htmlType="submit" style={{ width: '100%' }}>
+                            Submit
+                        </Button>
                     </Row>
                 </Form.Item>
             </Form>
@@ -74,18 +74,22 @@ const Record_Book = () => {
     );
 
     return (
-        <Layout className='layout' style={{paddingBottom:'50px'}}>
+        <Layout className='layout' style={{ paddingBottom: '50px' }}>
             <Content>
                 <h1 className="header">Record Book</h1>
                 <Row justify='center'>
-                <div className="container2" style={{width:'350px',display:'inline-block',backgroundColor:'white',padding:'30px'}}>
-                    <Row>
-                    {FormContents}
-                    </Row>
-                </div>
-                <div style={{display:'inline-block', margin:'0'}} > 
-                    <img  src="images/coverBook.jpg" width="425px" />
-                </div>
+                    <div style={{ boxShadow: '0px 0px 30px 0px rgba(0,0,0,0.2)', width: '775px' }}>
+                        <Row justify='center' align='middle' >
+                            <div className="container2" style={{ width: '350px', display: 'inline-block', backgroundColor: 'white', padding: '30px' }}>
+                                <Row>
+                                    {FormContents}
+                                </Row>
+                            </div>
+                            <div style={{ display: 'inline-block', margin: '0' }} >
+                                <img src="images/coverBook.jpg" width="425px" />
+                            </div>
+                        </Row>
+                    </div>
                 </Row>
             </Content>
         </Layout>
