@@ -18,7 +18,7 @@ function Readed_Book() {
 
             
                     
-                    <h1 className="header">Readed Book</h1>
+                    <h1 className="header" style={{marginTop:'100px'}}>List of books</h1>
                     <AllReadedBook />
                 </div>
 

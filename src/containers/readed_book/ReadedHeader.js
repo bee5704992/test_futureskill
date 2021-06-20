@@ -22,9 +22,11 @@ const ReadedHeader = () => {
 
     return (
         <div className="readed-header">
-            <Row justify="end">
+            
+            
+            <Row justify="end" >
                 <div style={{marginRight:'30px'}} >
-                    <Search placeholder="หนังสือที่ต้องการค้นหา" allowClear onSearch={onSearch} style={{ width: '30vw' }} />
+                    <Search placeholder="หนังสือที่ต้องการค้นหา" allowClear onSearch={onSearch} style={{ width: '30vw' }} enterButton/>
                 </div>
 
                 <div style={{marginRight:'30px',color:'white'}}>
@@ -32,6 +34,7 @@ const ReadedHeader = () => {
                     {sort_by_select}
                 </div>
             </Row>
+           
         </div>
     )
 };

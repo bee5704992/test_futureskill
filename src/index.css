@@ -19,8 +19,21 @@ button:disabled {
 
 .ant-menu.ant-menu-dark .ant-menu-item-selected {
   background: #4f02b1 !important;
+  border-left: 3px solid #0fffd7;
 }
 
 .ant-layout {
   background: white;
+}
+
+.ant-btn-background-ghost {
+  color: #ff470f;
+  background: transparent !important;
+  border-color: #ff470f;
+}
+
+.edit-but {
+  color: #ff9f0f;
+  background: transparent !important;
+  border-color: #ff9f0f;
 }

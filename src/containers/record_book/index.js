@@ -1,13 +1,23 @@
 import React, { useState } from 'react';
-import { Layout, Form, Input, Button, Row, Col } from 'antd';
+import { Layout, Form, Input, Button, Row, Col, Select, TimePicker } from 'antd';
+import moment from 'moment';
+import { connect } from 'react-redux';
 const { Content } = Layout;
 const { TextArea } = Input;
+const { Option } = Select;
 
-const Record_Book = () => {
+const Record_Book = (props) => {
+    const [timeValue, setTimeValue] = useState('');
 
+    function onTimeChange(time, timeString) {
+        console.log(time,timeString);
+        setTimeValue(timeString);
+    }
 
     const onFinish = (values) => {
-        console.log(values)
+        console.log(values);
+        const newValues = {...values, read_time: timeValue};
+        props.BOOK_OBJ({ type: 'ADD_OBJ_BOOK', inputObjBook: newValues });
     };
 
     const layout = {
@@ -51,15 +61,30 @@ const Record_Book = () => {
                     name="book_url"
                     rules={[{ required: true, message: 'โปรดใส่urlปกหนังสือ' }]}
                 >
-                    <Input />
+                    <Select
+                        placeholder="Select a book url"
+                        
+                        
+                    >
+                        <Option value="https://dwtr67e3ikfml.cloudfront.net/bookCovers/a5dfa64040cd53629f83460a35ab94e6a21d6897__300x0">Shaman</Option>
+                        <Option value="https://dwtr67e3ikfml.cloudfront.net/bookCovers/0628f528734e70fd8e8b1c964338f889907312dc__300x0">Libra Shrugged</Option>
+                        <Option value="https://dwtr67e3ikfml.cloudfront.net/bookCovers/733a9d6c5c5fe88438334ad284731270b2fd818b__300x0">Star-Spangled Panties</Option>
+                        <Option value="https://dwtr67e3ikfml.cloudfront.net/bookCovers/6cdde68537bfcad3103bf69543f74295dfd1e443__300x0">Arcade in a Box</Option>
+                        <Option value="https://dwtr67e3ikfml.cloudfront.net/bookCovers/e572195142ccc816d85aeabfa7cf74afebd28c5e__300x0">Cooking With Columbo</Option>
+                        <Option value="https://dwtr67e3ikfml.cloudfront.net/bookCovers/5d3bfa1e7ff810d62ecb16d2a69da6de1a7eb3e5__300x0">Q is for Quantum</Option>
+                        <Option value="https://dwtr67e3ikfml.cloudfront.net/bookCovers/39d311404acd579b5a0f647d6df7f9f1598da4be__300x0">Bums No More</Option>
+                        <Option value="https://dwtr67e3ikfml.cloudfront.net/bookCovers/0f934e8ed08241338cfe10d724eb4ce3f08ae4a9__300x0">The Doors Unhinged</Option>
+                        <Option value="https://dwtr67e3ikfml.cloudfront.net/bookCovers/0fc41470c47d03a2e1473bb952baf4e4df620604__300x0">How Design Makes the World</Option>
+                        <Option value="https://dwtr67e3ikfml.cloudfront.net/bookCovers/d6444a6cc59df83ec7d8f86052a29462e3522fe4__300x0">Witnessing Bigfoot</Option>
+                    </Select>
                 </Form.Item>
 
                 <Form.Item
-                    label="วันเวลาที่อ่าน"
-                    name="read_date"
-                    rules={[{ required: true, message: 'โปรดใส่วันเวลาที่อ่านจบ' }]}
+                    label="เวลาที่ให้อ่าน"
+                    name="read_time"
+                    rules={[{ required: true, message: 'โปรดใส่เวลาที่ให้อ่าน' }]}
                 >
-                    <Input />
+                    <TimePicker onChange={onTimeChange} />
                 </Form.Item>
 
                 <Form.Item style={{ marginBottom: '0' }} >
@@ -96,4 +121,18 @@ const Record_Book = () => {
     )
 }
 
-export default Record_Book
+const mapStateToProps = (state) => {
+    return {
+        book_obj: state.book_ctrl.arrObjBook,
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        BOOK_OBJ: (action) => dispatch(action),
+
+
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Record_Book)

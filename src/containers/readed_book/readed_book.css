@@ -1,6 +1,10 @@
 .readed-header {
     background: linear-gradient(to  right , rgb(254, 0, 138), rgb(6, 0, 210)) !important;
     padding: 10px;
+    position: fixed;
+    left: 0px;
+    width: 100vw;
+    
 }
 
 .readed-content {

@@ -17,6 +17,7 @@ const App = () => (
               height: '100vh',
               position: 'fixed',
               left: 0,
+              zIndex: 1000,
             }}
     >
       <Menu
@@ -28,7 +29,7 @@ const App = () => (
         <Menu.Item key="1"><Link to="/">Home</Link></Menu.Item>
         <Menu.Item key="2"><Link to="/about-us">About Us</Link></Menu.Item>
         <Menu.Item key="3"><Link to="/record-book">Record Book</Link></Menu.Item>
-        <Menu.Item key="4"><Link to="/readed-book">Readed Book</Link></Menu.Item>
+        <Menu.Item key="4"><Link to="/readed-book">List of books</Link></Menu.Item>
       </Menu>
     </Sider>
 
